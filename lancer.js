@@ -10,5 +10,13 @@ const overlay = document.querySelector('.overlay');
 
 for (let i = 0; i < showModals.length; i++) {
     const modal  = showModals[i];
-    console.log(modal.textContent);
+   modal.addEventListener('click', function(){
+    modalWindow.classList.remove('hidden');
+    overlay.classList.remove('hidden')
+   })
 }
+
+closeBtn.addEventListener('click', function(){
+   modalWindow.classList.add('hidden') 
+   overlay.classList.add('hidden') 
+})
