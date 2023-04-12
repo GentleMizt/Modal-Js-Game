@@ -14,13 +14,18 @@ function hideModal() {
   overlay.classList.add('hidden');
 }
 
-for (let i = 0; i < showModals.length; i++) {
-  const modal = showModals[i];
-  modal.addEventListener('click', function () {
-    modalWindow.classList.remove('hidden');
-    overlay.classList.remove('hidden');
-  });
+// Function to open the modal
+function openModal() {
+  modalWindow.classList.remove('hidden');
+  overlay.classList.remove('hidden');
 }
+
+// looping through the showModals Array
+for (let i = 0; i < showModals.length; i++) {
+    const modal = showModals[i];
+    modal.addEventListener('click', openModal);
+}
+
 
 closeBtn.addEventListener('click', hideModal);
 
