@@ -8,15 +8,20 @@ const overlay = document.querySelector('.overlay');
 
 // Nodelist is a little bit like an array but at the same time it's not an array.
 
-for (let i = 0; i < showModals.length; i++) {
-    const modal  = showModals[i];
-   modal.addEventListener('click', function(){
-    modalWindow.classList.remove('hidden');
-    overlay.classList.remove('hidden')
-   })
+// Function to hide the modal
+function hideModal() {
+  modalWindow.classList.add('hidden');
+  overlay.classList.add('hidden');
 }
 
-closeBtn.addEventListener('click', function(){
-   modalWindow.classList.add('hidden') 
-   overlay.classList.add('hidden') 
-})
+for (let i = 0; i < showModals.length; i++) {
+  const modal = showModals[i];
+  modal.addEventListener('click', function () {
+    modalWindow.classList.remove('hidden');
+    overlay.classList.remove('hidden');
+  });
+}
+
+closeBtn.addEventListener('click', hideModal);
+
+overlay.addEventListener('click', hideModal);
