@@ -38,5 +38,7 @@ body{
     right: 2rem;
     font-size: 5rem;
     color: #333;
-    
+    cursor: pointer;
+    border: none;
+    background: none;
 }
