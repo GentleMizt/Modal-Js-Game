@@ -22,11 +22,18 @@ function openModal() {
 
 // looping through the showModals Array
 for (let i = 0; i < showModals.length; i++) {
-    const modal = showModals[i];
-    modal.addEventListener('click', openModal);
+  const modal = showModals[i];
+  modal.addEventListener('click', openModal);
 }
-
 
 closeBtn.addEventListener('click', hideModal);
 
 overlay.addEventListener('click', hideModal);
+
+document.addEventListener('keydown', function (e) {
+  if (e.key === 'Escape') {
+    if (!modalWindow.classList.contains('hidden')) {
+      hideModal();
+    }
+  }
+});
