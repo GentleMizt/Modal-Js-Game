@@ -30,6 +30,7 @@ closeBtn.addEventListener('click', hideModal);
 
 overlay.addEventListener('click', hideModal);
 
+// listening to the document object and reacting to an event when the Esc button is fired
 document.addEventListener('keydown', function (e) {
   if (e.key === 'Escape') {
     if (!modalWindow.classList.contains('hidden')) {
